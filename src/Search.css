@@ -1,0 +1,53 @@
+.search {
+  position: absolute;
+  top: 35px;
+  left: 25%;
+  /* width: 100vw; */
+}
+.search > h2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 559px;
+  padding: 10px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+}
+.search > input {
+  width: 539px;
+  padding: 20px;
+  position: absolute;
+  left: 0;
+  height: 30px;
+  top: 400px;
+  border: none;
+}
+.search > input:focus {
+  outline-width: 0;
+}
+.search > button {
+  width: 579px;
+  position: absolute;
+  left: 0;
+  top: 480px;
+  border: none;
+  color: white;
+  background-color: cornflowerblue;
+  text-transform: inherit !important;
+  font-weight: 700;
+  /* padding: 20px; */
+}
+.search > button:hover {
+  color: cornflowerblue;
+  background-color: white;
+  outline: cornflowerblue;
+}
+/* .dataList {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+} */
+/* .dataList > option {
+  background-color: cornflowerblue;
+} */

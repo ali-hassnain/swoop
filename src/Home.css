@@ -1,0 +1,10 @@
+.home__section {
+  display: flex;
+  padding: 30px;
+}
+.categories {
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 10px;
+  color: cornflowerblue;
+}
