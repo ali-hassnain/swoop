@@ -2,8 +2,9 @@
   display: flex;
   padding: 30px;
 }
-.categories {
+.categories__header {
   text-align: center;
+  margin-top: 8rem;
   font-size: 30px;
   letter-spacing: 10px;
   color: cornflowerblue;

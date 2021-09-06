@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
 import Search from "./Search";
 import { useHistory } from "react-router-dom";
-
+import Login from "./Login";
 function Banner() {
   const history = useHistory();
   const [showSearch, setShowSearch] = useState(false);
@@ -22,6 +22,7 @@ function Banner() {
           {showSearch ? "Hide" : "Select Dates"}
         </Button>
       </div>
+
       <div className="banner__info">
         <h1>You can always get what you want.</h1>
         <h5>Find different kinds of gems hidden near you.</h5>

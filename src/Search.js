@@ -30,7 +30,12 @@ function Search() {
         Category
         <CategoryIcon />
       </h2>
-      <input classtype="text" list="category" placeholder="options" />
+      <input
+        className="calender__input"
+        type="text"
+        list="category"
+        placeholder="options"
+      />
       <datalist className="dataList" id="category">
         <option>Music</option>
         <option>Travel</option>

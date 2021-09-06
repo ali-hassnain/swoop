@@ -7,8 +7,8 @@ function Home() {
   return (
     <div className="home">
       <Banner />
-      <div className="categories">
-        <h1>Categories</h1>
+      <div className="categories__header">
+        <h2>Categories</h2>
       </div>
       <div className="home__section">
         <Card

@@ -4,7 +4,22 @@ import SearchIcon from "@material-ui/icons/Search";
 import { Avatar } from "@material-ui/core";
 import { Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import AccountMenu from "./AccountMenu";
+import { useHistory } from "react-router-dom";
+import { useRef } from "react";
+import { useEffect } from "react";
+
 function Header() {
+  const [open, setOpen] = useState(false);
+  const history = useHistory();
+
+  document.onclick = function (e) {
+    if (e.target.id !== "profile__avatar") {
+      console.log(document.onclick);
+    }
+  };
+
   return (
     <div className="header">
       <Link to="/">
@@ -20,9 +35,16 @@ function Header() {
       <div className="header__right">
         <div className="rent__tag">
           <p>Rent out your products</p>
-          <Button> start swooping</Button>
+          <Button onClick={() => history.push("/listing")}>
+            Start Swooping
+          </Button>
         </div>
-        <Avatar className="avatar"></Avatar>
+        <Avatar
+          onClick={() => setOpen(!open)}
+          id="profile__avatar"
+          className="avatar"
+        ></Avatar>
+        {open && <AccountMenu />}
       </div>
     </div>
   );
