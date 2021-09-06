@@ -68,7 +68,8 @@
 .search__icon {
   color: cornflowerblue !important;
 }
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
   font-size: 18px;
   color: cornflowerblue;
   opacity: 0.7;
