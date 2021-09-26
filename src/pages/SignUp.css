@@ -1,0 +1,58 @@
+.sign-up__container {
+  box-shadow: 0px 2px 4px RGB(0 0 0/18%);
+  padding: 15px;
+}
+
+.sign-up__icon {
+  background-color: #a2def9 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.sign-up__heading {
+  color: #a2def9;
+  font-weight: 550 !important;
+  margin-bottom: 2em !important;
+  text-align: center;
+}
+.sign-up__icon {
+  margin-left: 45%;
+}
+
+.MuiInputBase-input {
+  font-family: "century gothic" !important;
+  border: none !important;
+  box-shadow: 0px 2px 4px RGB(0 0 0/18%) !important;
+  color: #1a2a31 !important;
+  font-size: 20px !important;
+}
+.MuiTypography-body1 {
+  font-family: "century gothic" !important;
+  font-size: 1rem !important;
+}
+.MuiCheckbox-colorPrimary.Mui-checked {
+  color: #a2def9 !important;
+}
+.MuiButton-containedPrimary {
+  color: #fff !important;
+  background-color: #a2def9 !important;
+  font-weight: 600 !important;
+  margin-top: 20px !important;
+}
+.MuiLink-underlineHover {
+  color: black !important;
+}
+
+.makeStyles-avatar-16,
+.makeStyles-avatar-2 {
+  background-color: #a2def9 !important;
+}
+.MuiTypography-h5 {
+  color: #a2def9;
+  font-weight: 550 !important;
+  margin-bottom: 2em !important;
+  text-align: center;
+}
+.MuiContainer-maxWidthXs {
+  box-shadow: 0px 2px 4px RGB(0 0 0/18%) !important;
+}

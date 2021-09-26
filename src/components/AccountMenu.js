@@ -1,6 +1,5 @@
 import "./AccountMenu.css";
 import React from "react";
-import SignUp from "./SignUp";
 import { Link } from "react-router-dom";
 
 function AccountMenu() {
@@ -14,7 +13,7 @@ function AccountMenu() {
           <a href="/login">Login</a>
         </li>
         <li className="dropdown__menuItem">
-          <a href="/listing">Experience renting</a>
+          <a href="/listing-form">Experience sharing</a>
         </li>
         <li className="dropdown__menuItem">
           <a href="/search">Experience borrowing</a>

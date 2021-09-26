@@ -1,7 +1,8 @@
 import React from "react";
-import Banner from "./Banner";
+import Banner from "./../components/Banner";
 import "./Home.css";
-import Card from "./Card";
+import Card from "./../components/Card";
+import RentingComp from "../components/RentingComp";
 
 function Home() {
   return (
@@ -56,9 +57,7 @@ function Home() {
         />
       </div>
       <div>
-        {/* <Card />
-        <Card />
-        <Card /> */}
+        <RentingComp />
       </div>
     </div>
   );

@@ -5,8 +5,9 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import { useState } from "react";
-import Login from "./Login";
 import SignUp from "./SignUp";
+import SignUpTwo from "./SignUpTwo";
+import "./SignUpSignIn.css";
 
 function SignUpSignSignIn() {
   const [value, setValue] = useState(0);
@@ -43,14 +44,14 @@ function SignUpSignSignIn() {
         onChange={handleChange}
         aria-label="disabled tabs example"
       >
-        <Tab label="Sign in" />
-        <Tab label="Register" />
+        <Tab label="Step 1" />
+        <Tab label="Step 2" />
       </Tabs>
       <TabPanel value={value} index={0}>
-        <Login />
+        <SignUp />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <SignUp />
+        <SignUpTwo />
       </TabPanel>
     </Paper>
   );

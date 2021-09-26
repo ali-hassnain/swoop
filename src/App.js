@@ -1,14 +1,21 @@
 import "./App.css";
-import Home from "./Home.js";
-import Header from "./Header";
-import Footer from "./Footer.js";
-import SignUp from "./SignUp";
+import Home from "./pages/Home";
+import Header from "./components/HeaderTwo";
+import Footer from "./components/Footer";
+import SignUp from "./pages/SignUp";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import SearchPage from "./SearchPage";
-import Login from "./Login";
-import ExperienceRenting from "./ExperienceRenting.js";
-import Help from "./Help";
-import SignUpSignIn from "./SignUpSignIn";
+import SearchPage from "./pages/SearchPage";
+import Login from "./pages/Login";
+
+import Help from "./pages/Help";
+import SignUpSignIn from "./pages/SignUpSignIn";
+import ForgotPassword from "./pages/ForgotPassword";
+import BecomeRenter from "./pages/ListingPages/BecomeRenter";
+import BecomeRenterTwo from "./pages/ListingPages/BecomeRenterTwo";
+// import GoogleApiWrapper from "./pages/Listing pages/BecomeRenterMap";
+import ListingForm from "./pages/ListingPages/ListingForm";
+// import UploadComponent from "./pages/Listing pages/ListingImages";
+import BookingPage from "./pages/BookingPages/BookingPage";
 
 function App() {
   return (
@@ -17,7 +24,28 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route path="/sign-up/login">
+          <Route exact path="/search/book-product">
+            <BookingPage />
+          </Route>
+          {/* <Route className="ListingImage">
+            <UploadComponent />
+          </Route> */}
+          <Route exact path="/listing-form/step1/form-submission">
+            <ListingForm />
+          </Route>
+          {/* <Route path="/listing">
+            <GoogleApiWrapper />
+          </Route> */}
+          <Route exact path="/listing-form/step1">
+            <BecomeRenterTwo />
+          </Route>
+          <Route exact path="/listing-form">
+            <BecomeRenter />
+          </Route>
+          <Route path="forgot-password">
+            <ForgotPassword />
+          </Route>
+          <Route path="/sign-up">
             <SignUpSignIn />
           </Route>
           <Route exact path="/">
@@ -32,9 +60,7 @@ function App() {
           <Route exact path="/login">
             <Login />
           </Route>
-          <Route exact path="/listing">
-            <ExperienceRenting />
-          </Route>
+
           <Route exact path="/search">
             <SearchPage />
           </Route>

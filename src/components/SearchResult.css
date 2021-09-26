@@ -21,11 +21,7 @@
   justify-content: space-between;
   padding-left: 20px;
 }
-.searchResult__heart {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-}
+
 .searchResult__infoTop {
   width: 40vw;
 }
@@ -52,4 +48,18 @@
   position: absolute;
   bottom: 20px;
   right: 30px;
+}
+.searchResult__heart {
+  color: red !important;
+  border: black;
+  position: absolute;
+  top: 20px;
+  right: 40px;
+}
+.searchResult__heart-inactive {
+  color: black;
+  border: black;
+  position: absolute;
+  top: 20px;
+  right: 40px;
 }

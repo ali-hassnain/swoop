@@ -2,7 +2,8 @@ import "./SearchResult.css";
 import React from "react";
 import FavouriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import StartIcon from "@material-ui/icons/Star";
-
+import { useHistory } from "react-router";
+import { useState } from "react";
 function SearchResult({
   img,
   location,
@@ -12,11 +13,29 @@ function SearchResult({
   price,
   total,
 }) {
+  const history = useHistory();
+  const [click, setClick] = useState(false);
+
+  const colorRed = () => {
+    setClick(!click);
+  };
   return (
     <div className="searchResult">
-      <img src={img} alt={title}></img>
-      <FavouriteBorderIcon className="searchResult__heart" />
-      <div className="searchResult__info">
+      <img
+        onClick={() => history.push("/search/book-product")}
+        src={img}
+        alt={title}
+      ></img>
+      <FavouriteBorderIcon
+        onClick={colorRed}
+        className={
+          click ? "searchResult__heart" : "searchResult__heart-inactive"
+        }
+      />
+      <div
+        onClick={() => history.push("/search/book-product")}
+        className="searchResult__info"
+      >
         <div className="searchResult__infoTop">
           <p>{location}</p>
           <h3>{title}</h3>

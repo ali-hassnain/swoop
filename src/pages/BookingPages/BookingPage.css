@@ -1,0 +1,113 @@
+/*
+  The grid itself needs only 4 CSS declarations:
+*/
+
+.myGallery {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+  margin: 50px;
+}
+
+.myGallery img {
+  width: 100%;
+  border: 4px solid cornflowerblue;
+  border-radius: 20px;
+}
+
+/*
+    And here are some declarations for the image caption.
+    Just hover over one of the last 5 images to see it.
+  */
+
+#one,
+#two,
+#three,
+#four {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+#item-clicked {
+  transition: transform 0.2s; /* Animation */
+  margin: 0 auto;
+  transform: scale(1.5);
+  position: relative;
+  z-index: 1000;
+}
+.myGallery .item img {
+  vertical-align: middle;
+}
+.image-container {
+  height: 56px;
+  width: 56px;
+}
+.image-container > img {
+  height: 100%;
+  width: 100%;
+  position: static;
+  border-radius: 100%;
+  position: relative;
+  bottom: 82px;
+  left: 1100px;
+}
+.product-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+  font-size: 20px !important;
+}
+.product-details > h3 {
+  font-size: 24px !important;
+  font-weight: 600;
+}
+.product-details > p {
+  font-size: 18px !important;
+}
+.break-line {
+  width: 50%;
+  margin-top: 0;
+  margin-bottom: 30px;
+  margin-left: 25%;
+  margin-right: 25%;
+  border: 3px solid #a2def9;
+}
+.seller-rules {
+  font-weight: 600;
+  margin-left: 50px;
+  font-size: 24px !important;
+}
+.seller-rules__info {
+  margin-left: 50px;
+  font-size: 18px !important;
+  max-width: 50vw;
+}
+.borrow-section {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+.borrow-section > h3 {
+  font-weight: 600;
+  margin-bottom: 50px;
+  font-size: 24px;
+}
+.borrow-button > button {
+  color: white !important;
+  background-color: cornflowerblue !important;
+  font-weight: 600;
+  width: 559px;
+  margin-bottom: 30px;
+}
+.borrow-button > button:hover {
+  color: cornflowerblue !important;
+  background-color: white !important;
+}
+.product_images {
+  height: 200px !important;
+}
+.colored-prices {
+  color: cornflowerblue;
+}

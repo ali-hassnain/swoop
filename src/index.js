@@ -5,11 +5,14 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import "./styles/index.scss";
+import { AppProvider } from "./components/context";
 
 ReactDOM.render(
   <React.StrictMode>
     <CssBaseline />
-    <App />
+    <AppProvider>
+      <App />
+    </AppProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

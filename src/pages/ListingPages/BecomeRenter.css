@@ -1,0 +1,43 @@
+.form-start {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+.img-container > img {
+  width: 50vw;
+  height: 100vh;
+}
+
+.button-and-text {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vh;
+  background: #000;
+}
+.form-text > h1 {
+  font-weight: 700 !important;
+  text-align: center !important;
+  margin-top: 60px !important;
+  color: white;
+  font-size: 40px !important;
+}
+.form-text > h2 {
+  font-weight: 600;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 30px;
+  color: white;
+}
+.button-and-text > button {
+  color: white;
+  background-color: cornflowerblue;
+  width: 60%;
+  align-self: center;
+  margin-top: 100px;
+  position: relative;
+  top: 0px;
+}

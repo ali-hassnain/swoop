@@ -1,0 +1,140 @@
+/* .banner {
+  background: url("./banner1.png") center center/cover no-repeat; 
+  height: 100vh;
+  background-color: #a2def9;
+  position: relative;
+  width: 100%;
+  z-index: -1;
+} */
+
+.banner__info {
+  background-color: black;
+  color: white;
+  padding-top: 20vh;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 40px;
+  width: 40%;
+}
+.banner__content {
+  display: flex;
+  justify-content: space-between;
+  height: 70vh;
+}
+.banner__info > button {
+  background-color: cornflowerblue;
+  color: white;
+  text-transform: inherit;
+  margin-top: 20px;
+  font-weight: 600;
+}
+.banner__info > h3 {
+  margin-top: 20px;
+}
+.banner__info > h2 {
+  /* font-size: 40px; */
+  font-weight: 600;
+}
+.banner__info > button:hover {
+  background-color: white;
+  color: cornflowerblue;
+}
+.banner__searchButton {
+  background-color: white !important;
+  font-weight: 900 !important;
+  text-transform: inherit !important;
+  color: cornflowerblue !important;
+}
+.banner__search {
+  display: flex;
+  flex-direction: column;
+}
+.login__window {
+  right: 25% !important;
+}
+#banner-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 60%;
+  background-color: #a2def9;
+  align-items: flex-end;
+}
+
+#banner-heading > h1 {
+  color: white !important;
+  font-weight: 700 !important;
+  font-size: 80px;
+}
+/* Media queries in Saas File */
+
+/* @media only screen and (min-width: 992px) {
+  .banner__info > h3 {
+    margin-top: 10px;
+  }
+  .banner__info > button {
+    margin-top: 10px;
+  }
+  #banner-heading > h1 {
+    font-size: 110px;
+  }
+} */
+
+/* @media only screen and (max-width: 1160px) {
+  .banner__info {
+    padding-top: 15vh;
+  }
+}
+@media only screen and (max-width: 1060px) {
+  .banner-heading {
+    font-size: 40px;
+  }
+  .banner__info > h2 {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 880px) {
+  .banner__info {
+    width: 100%;
+    padding-top: 20vh;
+  }
+  .banner__info > h2 {
+    font-size: 60px;
+  }
+  .banner__info > h3 {
+    font-size: 20px;
+  }
+  .banner-heading {
+    display: none;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .banner__info > h2 {
+    font-size: 25px;
+  }
+}
+@media only screen and (max-width: 660px) {
+  .banner__info > h2 {
+    font-size: 35px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .banner__info {
+    padding-top: 10vh;
+  }
+  .banner__info > h2 {
+    font-size: 20px;
+  }
+  .banner__info > h3 {
+    font-size: 10px;
+  }
+}
+@media only screen and (max-width: 240px) {
+  .banner__info > h2 {
+    font-size: 15px;
+  }
+  .banner__info {
+    width: 100%;
+  }
+} */

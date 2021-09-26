@@ -1,0 +1,47 @@
+.rent-banner {
+  background-size: cover;
+  height: 40vh;
+  position: relative;
+  left: 64px;
+  margin-bottom: 600px;
+}
+.rent-banner__img > img {
+  position: absolute;
+  width: 60vw;
+  border: 20px solid;
+}
+.rent-banner__info {
+  padding-left: 80px !important;
+  padding-right: 80px !important;
+  width: 544px !important;
+}
+.rent-banner__heading > h2 {
+  margin-top: 0 !important;
+  margin-bottom: 0px !important;
+  font-size: 60px !important;
+  color: white;
+  font-weight: 600 !important;
+  position: relative;
+  top: 200px;
+}
+.rent-banner__subtitle {
+  font-size: 30px !important;
+  line-height: 24px !important;
+  color: rgb(255, 255, 255);
+  position: relative;
+  top: 220px;
+}
+.rent-banner__button > button {
+  color: white !important;
+  background-color: cornflowerblue;
+  font-weight: 600;
+  position: relative;
+  top: 250px;
+}
+.rent-banner__button > button:hover {
+  color: cornflowerblue !important;
+  font-weight: 600;
+  background-color: white !important;
+}
+@media only screen and (min-width: 1440) {
+}
