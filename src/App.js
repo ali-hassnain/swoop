@@ -4,7 +4,7 @@ import Header from "./components/HeaderTwo";
 import Footer from "./components/Footer";
 import SignUp from "./pages/SignUp";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import SearchPage from "./pages/SearchPage";
+import SearchPage from "./pages/SearchPages/SearchPage";
 import Login from "./pages/Login";
 
 import Help from "./pages/Help";
