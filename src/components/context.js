@@ -11,7 +11,6 @@ const AppProvider = ({ children }) => {
     const finalData = userData;
     const response = await axios.post("//localhost:1337/prods", finalData);
     setUserData([]);
-    console.log(response);
   };
   return (
     <AppContext.Provider value={{ userData, setUserData, handleSubmit }}>
