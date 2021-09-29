@@ -123,7 +123,7 @@ function BecomRenterTwo() {
         </div>
         <div className="next-button">
           <Button
-            onClick={() => history.push("/listing-form/step1/form-submission")}
+            onClick={() => history.push("/listing-form/step1/listing-dates")}
           >
             Next
           </Button>

@@ -111,3 +111,7 @@
 .colored-prices {
   color: cornflowerblue;
 }
+.loader {
+  position: relative;
+  margin: 30vh 50vw;
+}

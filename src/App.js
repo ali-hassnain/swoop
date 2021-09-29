@@ -16,6 +16,8 @@ import BecomeRenterTwo from "./pages/ListingPages/BecomeRenterTwo";
 import ListingForm from "./pages/ListingPages/ListingForm";
 // import UploadComponent from "./pages/Listing pages/ListingImages";
 import BookingPage from "./pages/BookingPages/BookingPage";
+import SearchResult from "./pages/SearchPages/SearchResult";
+import ListingDates from "./pages/ListingPages/ListingDates";
 
 function App() {
   return (
@@ -24,7 +26,10 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route exact path="/search/book-product">
+          <Route exact path="/listing-form/step1/listing-dates">
+            <ListingDates />
+          </Route>
+          <Route exact path="/search/:id">
             <BookingPage />
           </Route>
           {/* <Route className="ListingImage">
@@ -60,9 +65,8 @@ function App() {
           <Route exact path="/login">
             <Login />
           </Route>
-
           <Route exact path="/search">
-            <SearchPage />
+            <SearchResult />
           </Route>
           <Route exact path="/help">
             <Help />
