@@ -3,6 +3,7 @@ import Banner from "./../components/Banner";
 import "./Home.css";
 import Card from "./../components/Card";
 import RentingComp from "../components/RentingComp";
+import FileUpload from "../components/fileUpload";
 
 function Home() {
   return (

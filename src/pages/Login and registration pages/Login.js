@@ -14,19 +14,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { useState } from "react";
 import axios from "axios";
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import { useGlobalContext } from "../../components/context";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -49,27 +37,30 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignIn() {
-  // axios
-  //   .post("http://localhost:1337/logins", {
-  //     email: "",
-  //     password: "",
-  //   })
-  //   .then((response) => {
-  //     console.log(response);
-  //   });
   const classes = useStyles();
-  const [user, setUser] = useState();
+  const { isLoggedIn, setIsLoggedIn } = useGlobalContext();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const name = e.target.name;
-    const value = e.target.value;
-    const response = await axios.post(
-      "http://localhost:1337/logins",
+    const userData = {
+      identifier: signIn.email,
+      password: signIn.password,
+      username: signIn.email,
+    };
 
-      setUser({ ...user, [name]: value })
-    );
-
-    console.log(response);
+    try {
+      const response = await axios.post(
+        "http://localhost:1337/auth/local",
+        userData
+      );
+      console.log(response);
+      const token = response.data.jwt;
+      localStorage.setItem("token", token);
+      window.location.href = "/";
+    } catch (error) {
+      alert("user does not exist, please register.");
+      console.log(error);
+    }
     setSignIn({
       email: "",
       password: "",
@@ -79,12 +70,14 @@ export default function SignIn() {
     const name = e.target.name;
     const value = e.target.value;
     setSignIn({ ...signIn, [name]: value });
-    console.log(name, value);
   };
   const [signIn, setSignIn] = useState({
     email: "",
     password: "",
   });
+  const SignOut = () => {
+    console.log("Logged out!");
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -102,6 +95,7 @@ export default function SignIn() {
             margin="normal"
             required
             fullWidth
+            type="email"
             id="email"
             label="Email Address"
             name="email"

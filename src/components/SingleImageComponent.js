@@ -2,36 +2,27 @@ import "./ListingForm.css";
 import React, { useState, useEffect } from "react";
 import { Button } from "@material-ui/core";
 import { useHistory } from "react-router";
-import { useGlobalContext } from "../../components/context";
+import { useGlobalContext } from "./context";
 import axios from "axios";
 
 function ListingForm() {
-  const [image, setImage] = useState([]);
+  const [image, setImage] = useState(null);
   const { userData, setUserData, handleSubmit } = useGlobalContext();
-
   const history = useHistory();
-  const images = [];
   const handleImageChange = (e) => {
-    for (let i = 0; i <= e.target.files.length - 1; i++) {
-      const newImage = e.target.files[i];
-      images.push(newImage);
-    }
-    setImage(images);
+    setImage(e.target.files[0]);
   };
-  useEffect(() => {
-    const FinalImageArr = [];
-    image.forEach(async (elem) => {
-      const data = new FormData();
-      data.append("files", elem);
-      console.log("image:", image);
-      const image_URL = await axios.post("http://localhost:1337/upload", data);
-      console.log("imageURL:", image_URL);
-      FinalImageArr.push(image_URL.data[0].id);
-    });
+  useEffect(async () => {
+    const data = new FormData();
+    data.append("files", image);
+    console.log(data);
+    const image_URL = await axios.post("http://localhost:1337/upload", data);
     setUserData({
       ...userData,
-      imagesArray: FinalImageArr,
+      imagesArray: image_URL.data[0].id,
     });
+    // console.log("image:", image);
+    console.log("imageURL:", image_URL);
   }, [image]);
 
   return (
@@ -40,7 +31,6 @@ function ListingForm() {
         <h1 id="heading">Please tell us more about your product.</h1>
       </div>
       <div className="form-content">
-        ) : ( "" )}
         <div className="step-one-form-header">
           <div className="exit-button">
             <Button onClick={() => history.push("/listing-form/step1")}>
@@ -48,6 +38,7 @@ function ListingForm() {
             </Button>
           </div>
         </div>
+
         <form className="submission-form" onSubmit={handleSubmit}>
           <div className="listingForm">
             <input

@@ -50,21 +50,24 @@
   position: static;
   border-radius: 100%;
   position: relative;
-  bottom: 82px;
-  left: 1100px;
+  bottom: 262px;
+  left: 842px;
 }
 .product-details {
   display: flex;
   flex-direction: column;
   margin-left: 50px;
   font-size: 20px !important;
+  max-width: 50vw;
 }
 .product-details > h3 {
   font-size: 24px !important;
   font-weight: 600;
+  max-width: 50vw;
 }
 .product-details > p {
   font-size: 18px !important;
+  max-width: 50vw;
 }
 .break-line {
   width: 50%;

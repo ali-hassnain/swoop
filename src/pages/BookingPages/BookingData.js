@@ -38,28 +38,28 @@ function BookingPage({}) {
               className="product_image"
               onClick={enlarge}
             >
-              <img src={images.product_images[1]} />
+              <img src={images.product_images.formats.medium} />
             </div>
             <div
               id={click ? "item-clicked" : "two"}
               className="product_image"
               onClick={enlarge}
             >
-              <img src={images.product_images.id} />
+              <img src={images.product_images.formats.medium} />
             </div>
             <div
               id={click ? "item-clicked" : "three"}
               className="product_image"
               onClick={enlarge}
             >
-              <img src={images.product_images} />
+              <img src={images.product_images.formats.medium} />
             </div>
             <div
               id={click ? "item-clicked" : "four"}
               className="product_image"
               onClick={enlarge}
             >
-              <img src={images.product_images} />
+              <img src={images.product_images.formats.medium} />
             </div>
           </div>
         ))}

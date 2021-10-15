@@ -3,17 +3,17 @@ import React, { useState } from "react";
 import { Button } from "@material-ui/core";
 import { useHistory } from "react-router";
 import { useGlobalContext } from "../../components/context";
-import axios from "axios";
 
 function BecomRenterTwo() {
   const { userData, setUserData } = useGlobalContext();
   const history = useHistory();
-
+  console.log(userData.category);
   return (
     <main className="step-one-form">
       <div className="step-one-form-heading">
         <h1 id="heading">What kind of Product will you rent?</h1>
       </div>
+
       <div className="form-content">
         <div className="step-one-form-header">
           <div className="exit-button">
@@ -23,10 +23,12 @@ function BecomRenterTwo() {
         <div className="categories" id="checkboxes">
           <label className="categories-items" for="one">
             <input
+              checked={userData.category === "music" ? true : false}
               type="checkbox"
               id="one"
               name="music"
               value="music"
+              defaultValue=""
               onChange={(e) =>
                 setUserData({ ...userData, category: e.target.value })
               }
@@ -36,6 +38,7 @@ function BecomRenterTwo() {
           <label className="categories-items" for="two">
             {" "}
             <input
+              checked={userData.category === "furniture" ? true : false}
               type="checkbox"
               id="two"
               name="Furniture"
@@ -48,6 +51,7 @@ function BecomRenterTwo() {
           </label>
           <label className="categories-items" for="three">
             <input
+              checked={userData.category === "travel" ? true : false}
               type="checkbox"
               id="three"
               name="Travel"
@@ -60,6 +64,7 @@ function BecomRenterTwo() {
           </label>
           <label className="categories-items" for="four">
             <input
+              checked={userData.category === "gadgets" ? true : false}
               type="checkbox"
               id="four"
               name="Gadgets"
@@ -74,6 +79,7 @@ function BecomRenterTwo() {
             {" "}
             <input
               type="checkbox"
+              checked={userData.category === "decor" ? true : false}
               id="five"
               name="Decor"
               value="decor"
@@ -85,6 +91,7 @@ function BecomRenterTwo() {
           </label>
           <label className="categories-items" for="six">
             <input
+              checked={userData.category === "books" ? true : false}
               type="checkbox"
               id="six"
               name="Books"
@@ -98,6 +105,7 @@ function BecomRenterTwo() {
           <label className="categories-items" for="seven">
             <input
               type="checkbox"
+              checked={userData.category === "fashion" ? true : false}
               id="seven"
               name="Fashion"
               value="fashion"
@@ -112,6 +120,7 @@ function BecomRenterTwo() {
             <input
               type="checkbox"
               id="eight"
+              checked={userData.category === "sports" ? true : false}
               name="Sports"
               value="sports"
               onChange={(e) =>
@@ -123,6 +132,7 @@ function BecomRenterTwo() {
         </div>
         <div className="next-button">
           <Button
+            className={!userData.category && `disabled`}
             onClick={() => history.push("/listing-form/step1/listing-dates")}
           >
             Next

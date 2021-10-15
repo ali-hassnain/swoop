@@ -44,15 +44,15 @@ function SignUpSignSignIn() {
         onChange={handleChange}
         aria-label="disabled tabs example"
       >
-        <Tab label="Step 1" />
-        <Tab label="Step 2" />
+        {/* <Tab label="Step 1" /> */}
+        {/* <Tab label="Step 2" /> */}
       </Tabs>
       <TabPanel value={value} index={0}>
         <SignUp />
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      {/* <TabPanel value={value} index={1}>
         <SignUpTwo />
-      </TabPanel>
+      </TabPanel> */}
     </Paper>
   );
 }

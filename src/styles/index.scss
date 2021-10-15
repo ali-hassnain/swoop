@@ -28,17 +28,17 @@
     }
   }
   .MuiAvatar-fallback {
-    color: #a2def9;
+    color: #2983ab;
   }
   &__column-right-listing {
-    color: #a2def9;
+    color: #2983ab;
     font-size: 16px;
     font-weight: 700;
     margin-right: 1rem;
   }
   & a {
     text-decoration: none;
-    color: #a2def9;
+    color: #2983ab;
   }
   &__column-left {
     display: flex;
@@ -48,7 +48,7 @@
   margin-left: 4vw;
   & a {
     text-decoration: none;
-    color: #a2def9;
+    color: #2983ab;
     font-size: 40px;
     font-weight: 600;
     margin-top: 50%;
@@ -68,7 +68,7 @@
   box-shadow: 0px 2px 4px RGB(0 0 0 / 18%);
 
   &__icon-wrapper {
-    background: #a2def9;
+    background: #2983ab;
     border-radius: 100%;
     position: relative;
     width: 30px;
@@ -169,4 +169,17 @@
       font-size: 13px !important;
     }
   }
+}
+
+// CSS FIX FOR NAVBAR
+.banner__search {
+  position: relative;
+}
+
+.new-header {
+  position: relative;
+}
+
+.dropdown__menu {
+  z-index: 1;
 }

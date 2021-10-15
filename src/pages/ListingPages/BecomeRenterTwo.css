@@ -74,3 +74,7 @@
   background-color: cornflowerblue;
   font-weight: 600;
 }
+.disabled {
+  pointer-events: none;
+  filter: grayscale(1);
+}

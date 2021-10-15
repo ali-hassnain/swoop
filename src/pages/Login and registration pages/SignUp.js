@@ -13,6 +13,7 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import { useState } from "react";
+import axios from "axios";
 
 function Copyright() {
   return (
@@ -28,7 +29,6 @@ function Copyright() {
 }
 
 export default function SignUp() {
-  const [user, setUser] = useState([]);
   const [signUp, setSignUp] = useState({});
 
   const handleInput = (e) => {
@@ -36,18 +36,35 @@ export default function SignUp() {
     const value = e.target.value;
     setSignUp({ ...signUp, [name]: value });
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const newUser = { ...signUp, id: new Date().getTime().toString() };
-    setUser([...user, newUser]);
-    signUp({
+    const newUser = {
+      username: signUp.email,
+      email: signUp.email,
+      password: signUp.password,
+      firstName: signUp.firstName,
+      phone: signUp.phone,
+      lastName: signUp.lastName,
+      marketing_emails: signUp.marketing_emails,
+    };
+    console.log("newUser1", newUser);
+    try {
+      const response = await axios.post(
+        "http://localhost:1337/auth/local/register",
+        newUser
+      );
+    } catch (error) {
+      console.log(error);
+    }
+    console.log("newUser2", newUser);
+
+    setSignUp({
       firstName: "",
       lastName: "",
       email: "",
       phone: "",
       password: "",
     });
-    console.log(user);
   };
 
   return (
@@ -65,7 +82,7 @@ export default function SignUp() {
             <Grid className="sign-up__input" item xs={12} sm={6}>
               <TextField
                 className="sign-up__input"
-                autoComplete="fname"
+                autoComplete="off"
                 name="firstName"
                 variant="outlined"
                 required
@@ -83,31 +100,33 @@ export default function SignUp() {
                 fullWidth
                 label="Last Name"
                 name="lastName"
-                autoComplete="lname"
+                autoComplete="off"
                 value={signUp.lastName}
                 onChange={handleInput}
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
+                type="email"
                 variant="outlined"
                 required
                 fullWidth
                 label="Email Address"
                 name="email"
-                autoComplete="email"
+                autoComplete="off"
                 value={signUp.email}
                 onChange={handleInput}
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
+                type="number"
                 variant="outlined"
                 required
                 fullWidth
                 label="Phone"
                 name="phone"
-                autoComplete="phone"
+                autoComplete="off"
                 value={signUp.phone}
                 onChange={handleInput}
               />
@@ -120,7 +139,7 @@ export default function SignUp() {
                 name="password"
                 label="Password"
                 type="password"
-                autoComplete="current-password"
+                autoComplete="off"
                 value={signUp.password}
                 onChange={handleInput}
               />
@@ -128,8 +147,11 @@ export default function SignUp() {
             <Grid item xs={12}>
               <FormControlLabel
                 className="sign-up__form-label"
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
+                control={<Checkbox color="primary" />}
                 label="I want to receive marketing messages from Swoop."
+                onChange={handleInput}
+                value="true"
+                name="marketing_emails"
               />
             </Grid>
           </Grid>
@@ -144,19 +166,6 @@ export default function SignUp() {
             </Grid>
           </Grid>
         </form>
-        <div>
-          {user.map((curElem) => {
-            return (
-              <div>
-                <p>{curElem.firstName}</p>
-                <p>{curElem.lastName}</p>
-                <p>{curElem.email}</p>
-                <p>{curElem.phone}</p>
-                <p>{curElem.password}</p>
-              </div>
-            );
-          })}
-        </div>
       </div>
       <Box mt={10}></Box>
     </Container>

@@ -2,13 +2,13 @@ import "./App.css";
 import Home from "./pages/Home";
 import Header from "./components/HeaderTwo";
 import Footer from "./components/Footer";
-import SignUp from "./pages/SignUp";
+import SignUp from "./pages/Login and registration pages/SignUp";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SearchPage from "./pages/SearchPages/SearchPage";
-import Login from "./pages/Login";
+import Login from "./pages/Login and registration pages/Login";
 
 import Help from "./pages/Help";
-import SignUpSignIn from "./pages/SignUpSignIn";
+import SignUpSignIn from "./pages/Login and registration pages/SignUpSignIn";
 import ForgotPassword from "./pages/ForgotPassword";
 import BecomeRenter from "./pages/ListingPages/BecomeRenter";
 import BecomeRenterTwo from "./pages/ListingPages/BecomeRenterTwo";
@@ -50,6 +50,7 @@ function App() {
           <Route path="forgot-password">
             <ForgotPassword />
           </Route>
+
           <Route path="/sign-up">
             <SignUpSignIn />
           </Route>

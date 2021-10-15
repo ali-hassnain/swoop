@@ -27,7 +27,7 @@
 }
 .dropdown__menuItem > a:hover {
   box-shadow: 0px 2px 4px RGB(0 0 0/18%);
-  background-color: #a2def9;
+  background-color: #265468;
   color: white !important;
 }
 .dropdown__menuItem > a {

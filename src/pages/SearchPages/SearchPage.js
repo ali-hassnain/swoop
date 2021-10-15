@@ -5,7 +5,13 @@ import SearchResult from "./SearchResult";
 import useFetch from "../../components/useFetch";
 
 function SearchPage() {
-  const { error, data } = useFetch("http://localhost:1337/items-for-sharings/");
+  // const myHeaders = new Headers();
+  // myHeaders.append("Authorization", "Bearer" + token);
+  const { error, data } = useFetch(
+    "http://localhost:1337/items-for-sharings/"
+    // { Headers: myHeaders }
+  );
+  console.log("fetchData:", data);
   return (
     <div className="searchPage">
       <div className="searchPage__info">

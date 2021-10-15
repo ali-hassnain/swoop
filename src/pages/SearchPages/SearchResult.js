@@ -32,7 +32,7 @@ function SearchResult({
         <div className="searchResult">
           <img
             onClick={() => history.push(`/search/${id}`)}
-            src={product_images}
+            src={`http://localhost:1337${product_images[0].url}`}
             alt={Title}
           ></img>
           <FavouriteBorderIcon

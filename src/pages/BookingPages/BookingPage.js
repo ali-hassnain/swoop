@@ -25,6 +25,7 @@ function BookingPage({}) {
       try {
         const response = await fetch(`${url}${id}`);
         const data = await response.json();
+        console.log("data:", data);
         if (data) {
           const {
             product_images,
@@ -39,11 +40,10 @@ function BookingPage({}) {
             Title,
           } = data;
           const images = [
-            product_images[0],
-            product_images[1],
-            product_images[2],
-            product_images[3],
-            product_images[4],
+            `http://localhost:1337${product_images[0].url}`,
+            `http://localhost:1337${product_images[1].url}`,
+            `http://localhost:1337${product_images[2].url}`,
+            `http://localhost:1337${product_images[3].url}`,
           ];
           const newProduct = {
             location,
@@ -77,7 +77,6 @@ function BookingPage({}) {
     key: "selection",
     product: id,
   };
-  console.log(selectionRange);
 
   function handleSelect(ranges) {
     setStartDate(ranges.selection.startDate);
@@ -114,6 +113,7 @@ function BookingPage({}) {
     Title,
     images,
   } = product;
+
   return (
     <body>
       <main className="myGallery">
@@ -123,28 +123,28 @@ function BookingPage({}) {
             className="product_image"
             onClick={enlarge}
           >
-            <img src={images[1]} />
+            <img src={images[0]} alt={Title} />
           </div>
           <div
             id={click ? "item-clicked" : "two"}
             className="product_image"
             onClick={enlarge}
           >
-            <img src={images} />
+            <img src={images[1]} alt={Title} />
           </div>
           <div
             id={click ? "item-clicked" : "three"}
             className="product_image"
             onClick={enlarge}
           >
-            <img src={images} />
+            <img src={images[2]} alt={Title} />
           </div>
           <div
             id={click ? "item-clicked" : "four"}
             className="product_image"
             onClick={enlarge}
           >
-            <img src={images} />
+            <img src={images[3]} alt={Title} />
           </div>
         </div>
       </main>
@@ -173,7 +173,7 @@ function BookingPage({}) {
           <p>{Description}</p>
         </div>
         <div className="image-container">
-          <img src="https://scontent.flhe4-1.fna.fbcdn.net/v/t1.18169-9/12039503_10153682503046346_5601935267868748463_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeGDOoH4hBmESTuma594O_tmeGGDYPwPYiV4YYNg_A9iJTAP9KLsuPiXKYGW6Bps-4c&_nc_ohc=GsKciEvuexoAX_sB3rL&_nc_ht=scontent.flhe4-1.fna&oh=e3ba3c2496587b48f6625ed7a81656ec&oe=615F5891" />
+          <img src="https://images.pexels.com/photos/1930621/pexels-photo-1930621.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
         </div>
       </div>
       <hr className="break-line" />
@@ -189,7 +189,11 @@ function BookingPage({}) {
         <h3>Book this, Select dates for {Title}</h3>
         <div className="date-check__box">
           {" "}
-          <DateRangePicker ranges={[selectionRange]} onChange={handleSelect} />
+          <DateRangePicker
+            ranges={[selectionRange]}
+            onChange={handleSelect}
+            minDate={new Date()}
+          />
         </div>
         <div className="borrow-button">
           <Button onClick={handleSubmit}>Borrow</Button>

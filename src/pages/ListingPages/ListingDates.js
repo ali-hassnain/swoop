@@ -16,6 +16,7 @@ function ListingDates() {
     endDate: endDate,
     key: "selection",
   };
+
   console.log(selectionRange);
 
   function handleSelect(ranges) {
@@ -41,7 +42,11 @@ function ListingDates() {
           </div>
         </div>
         <div className="calender">
-          <DateRangePicker ranges={[selectionRange]} onChange={handleSelect} />
+          <DateRangePicker
+            ranges={[selectionRange]}
+            onChange={handleSelect}
+            minDate={new Date()}
+          />
 
           <div className="calender-btn">
             <Button onClick={handleSubmit}>Add Dates</Button>
@@ -49,6 +54,7 @@ function ListingDates() {
         </div>
         <div className="next-button">
           <Button
+            className={!userData.startDate && !userData.endDate && "disabled"}
             onClick={() => history.push("/listing-form/step1/form-submission")}
           >
             Next
