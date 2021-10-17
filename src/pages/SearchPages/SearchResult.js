@@ -7,13 +7,12 @@ import { useState } from "react";
 
 function SearchResult({
   star,
-  product_images,
+  imagesArray,
   title,
   location,
   city,
-  Title,
-  Description,
-  Price_perday,
+  description,
+  price_per_day,
   id,
 }) {
   const history = useHistory();
@@ -25,15 +24,15 @@ function SearchResult({
   const multiply = (x, y) => {
     return x * y;
   };
-
+  console.log(`http://localhost:1337${imagesArray[0].url}`);
   return (
     <div>
       <div>
         <div className="searchResult">
           <img
             onClick={() => history.push(`/search/${id}`)}
-            src={`http://localhost:1337${product_images[0].url}`}
-            alt={Title}
+            src={`http://localhost:1337${imagesArray[0].url}`}
+            alt={title}
           ></img>
           <FavouriteBorderIcon
             onClick={colorRed}
@@ -50,9 +49,9 @@ function SearchResult({
               <p>
                 {location}, {city}
               </p>
-              <h3>{Title}</h3>
+              <h3>{title}</h3>
               <p>____</p>
-              <p>{Description}</p>
+              <p>{description}</p>
             </div>
             <div className="searchName__infoBottom">
               <div className="searchResult__stars">
@@ -63,8 +62,8 @@ function SearchResult({
               </div>
 
               <div className="searchResult__price">
-                <h2>PKR {Price_perday}/day</h2>
-                <p>Total for selected days {multiply(12, Price_perday)}</p>
+                <h2>PKR {price_per_day}/day</h2>
+                <p>Total for selected days {multiply(12, price_per_day)}</p>
               </div>
             </div>
           </div>

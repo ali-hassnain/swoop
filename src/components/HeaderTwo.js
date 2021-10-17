@@ -7,17 +7,10 @@ import { useGlobalContext } from "./context";
 
 function HeaderTwo() {
   const searchValue = React.useRef("");
-  const { search, setSearch } = useGlobalContext;
+  const { search, HandleSearchSubmit, HandleSearchInput } = useGlobalContext();
   const [menu, setMenu] = useState(false);
-  const searchProduct = () => {
-    setSearch(searchValue.current.value);
-  };
-  useEffect(() => {
-    searchValue.current.focus();
-  }, []);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+  // console.log(search);
+
   return (
     <header className="new-header">
       <navbar className="new-header__wrapper">
@@ -31,19 +24,19 @@ function HeaderTwo() {
 
           <div className="search-wrapper">
             <input
-              value={search}
               id="name"
               className="search-wrapper__input"
               type="text"
               placeholder="Start your search"
-              ref={searchValue}
-              onChange={searchProduct}
+              value={search.query}
+              onChange={HandleSearchInput}
+              autoComplete="off"
             ></input>
             <figure className="search-wrapper__icon-wrapper">
               <SearchIcon
                 className="search-wrapper__icon"
                 type="submit"
-                onClick={handleSubmit}
+                onClick={HandleSearchSubmit}
               ></SearchIcon>
             </figure>
           </div>

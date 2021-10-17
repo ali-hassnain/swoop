@@ -28,7 +28,7 @@ const useFetch = (url) => {
   if (loading) {
     return <Spinner animation="border" variant="primary" className="loader" />;
   }
-  return { error, data, loading };
+  return { error, data, loading, setData };
 };
 
 export default useFetch;

@@ -30,9 +30,29 @@ const AppProvider = ({ children }) => {
 
   const [userData, setUserData] = useState({});
 
-  const [search, setSearch] = useState("a");
+  const [search, setSearch] = useState({ query: null, category: null });
 
   const token = localStorage.getItem("token");
+
+  // const HomeImageCategoriesClick = (e) => {
+  //   window.location.category
+  //   setSearch({ category: e.target.ValueFunc });
+  //   console.log("value:", e.target.ValueFunc);
+  //   const searchURL = `/search?query=${search.category.name}`;
+  //   window.location.href = searchURL;
+  // };
+
+  const HandleSearchInput = (e) => {
+    const query = e.target.value;
+    setSearch({ ...search, query });
+    console.log(query);
+  };
+
+  const HandleSearchSubmit = (e) => {
+    e.preventDefault();
+    const searchURL = `/search?query=${search.query}`;
+    window.location.href = searchURL;
+  };
 
   const checkLoginStatus = async () => {
     if (token) {
@@ -97,6 +117,8 @@ const AppProvider = ({ children }) => {
         setSearch,
         isLoggedIn,
         setIsLoggedIn,
+        HandleSearchInput,
+        HandleSearchSubmit,
       }}
     >
       {children}

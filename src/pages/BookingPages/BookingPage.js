@@ -173,7 +173,7 @@ function BookingPage({}) {
           <p>{Description}</p>
         </div>
         <div className="image-container">
-          <img src="https://images.pexels.com/photos/1930621/pexels-photo-1930621.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+          <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" />
         </div>
       </div>
       <hr className="break-line" />
