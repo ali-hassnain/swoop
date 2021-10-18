@@ -28,33 +28,33 @@ function BookingPage({}) {
         console.log("data:", data);
         if (data) {
           const {
-            product_images,
-            location,
-            city,
-            Price_perday,
-            Week_deposit,
+            imagesArray,
+            // location,
+            // city,
+            price_per_day,
+            deposit,
             category,
-            Description,
-            lenderFname,
-            product_rules,
-            Title,
+            description,
+            name,
+            // product_rules,
+            title,
           } = data;
           const images = [
-            `http://localhost:1337${product_images[0].url}`,
-            `http://localhost:1337${product_images[1].url}`,
-            `http://localhost:1337${product_images[2].url}`,
-            `http://localhost:1337${product_images[3].url}`,
+            `http://localhost:1337${imagesArray[0].url}`,
+            `http://localhost:1337${imagesArray[1].url}`,
+            `http://localhost:1337${imagesArray[2].url}`,
+            `http://localhost:1337${imagesArray[3].url}`,
           ];
           const newProduct = {
-            location,
-            city,
-            Price_perday,
-            Week_deposit,
+            // location,
+            // city,
+            price_per_day,
+            deposit,
             category,
-            Description,
-            lenderFname,
-            product_rules,
-            Title,
+            description,
+            name,
+            // product_rules,
+            title,
             images,
           };
 
@@ -102,15 +102,15 @@ function BookingPage({}) {
     return <h2>Sorry, try something else</h2>;
   }
   const {
-    location,
-    city,
-    Price_perday,
-    Week_deposit,
+    // location,
+    // city,
+    price_per_day,
+    deposit,
     category,
-    Description,
-    lenderFname,
-    product_rules,
-    Title,
+    description,
+    name,
+    // product_rules,
+    title,
     images,
   } = product;
 
@@ -123,28 +123,28 @@ function BookingPage({}) {
             className="product_image"
             onClick={enlarge}
           >
-            <img src={images[0]} alt={Title} />
+            <img src={images[0]} alt={title} />
           </div>
           <div
             id={click ? "item-clicked" : "two"}
             className="product_image"
             onClick={enlarge}
           >
-            <img src={images[1]} alt={Title} />
+            <img src={images[1]} alt={title} />
           </div>
           <div
             id={click ? "item-clicked" : "three"}
             className="product_image"
             onClick={enlarge}
           >
-            <img src={images[2]} alt={Title} />
+            <img src={images[2]} alt={title} />
           </div>
           <div
             id={click ? "item-clicked" : "four"}
             className="product_image"
             onClick={enlarge}
           >
-            <img src={images[3]} alt={Title} />
+            <img src={images[3]} alt={title} />
           </div>
         </div>
       </main>
@@ -152,25 +152,26 @@ function BookingPage({}) {
         <div>
           <h3>
             <strong>
-              {Title} by {lenderFname} in {location}, {city}.
+              {title} by {name} in
+              {/* {location}, {city}. */}
             </strong>
           </h3>
           <p>
             <strong>
-              <span className="colored-prices"> PKR-{Price_perday}/day</span> ·
+              <span className="colored-prices"> PKR-{price_per_day}/day</span> ·
               Cost for selected days is{" "}
               <span className="colored-prices">
                 PKR-
-                {multiply(12, Price_perday)}
+                {multiply(12, price_per_day)}
               </span>
               · Borrowing deposit required is{" "}
-              <span className="colored-prices">PKR-{Week_deposit} </span>
+              <span className="colored-prices">PKR-{deposit} </span>
             </strong>
           </p>
         </div>
         <div>
           <h4>Product Details - Category:{category}</h4>
-          <p>{Description}</p>
+          <p>{description}</p>
         </div>
         <div className="image-container">
           <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" />
@@ -179,14 +180,14 @@ function BookingPage({}) {
       <hr className="break-line" />
       <div>
         <div>
-          <h4 className="seller-rules">Sharing rules by {lenderFname}</h4>
-          <p className="seller-rules__info">{product_rules}</p>
+          <h4 className="seller-rules">Sharing rules by {name}</h4>
+          <p className="seller-rules__info">{/* {product_rules} */}</p>
         </div>
 
         <hr className="break-line" />
       </div>
       <div className="borrow-section">
-        <h3>Book this, Select dates for {Title}</h3>
+        <h3>Book this, Select dates for {title}</h3>
         <div className="date-check__box">
           {" "}
           <DateRangePicker
